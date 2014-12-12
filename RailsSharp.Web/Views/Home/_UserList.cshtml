@@ -1,0 +1,12 @@
+﻿@* rails# 6) MVC's Asset pipelining allows us to break up views into maintainable chuncks *@
+
+<div ng-controller="UsersListCtrl">
+	<table>
+		<tr>
+			<th>Email</th>
+		</tr>
+		<tr ng-repeat="user in usersListState.users">
+			<td>{{user.email}}</td>
+		</tr>
+	</table>
+</div>

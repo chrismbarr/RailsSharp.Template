@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - RailsSharp</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+
+</head>
+@* note: Angular: here we have a root context that all scopes inherit from, this will contain ubiquitous data. *@
+<body ng-app="app" ng-controller="RootCtrl" ng-cloak ng-class="{'cursor-loading': pageState.isLoading }">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			@if (Request.IsAuthenticated)
+			{
+				<ul class="nav navbar-nav">
+					@Html.ActionLink("RailsSharp", MVC.Home.ActionNames.Index, MVC.Home.Name, new { area = "" }, new { @class = "navbar-brand" })
+				</ul>
+			}
+			else
+			{
+				<span class="navbar-brand">RailsSharp</span>
+			}
+
+			<div class="nav navbar-right">
+				@if (Request.IsAuthenticated)
+				{
+					<ul class="nav navbar-nav">
+						<li class="collapse hidden-xs" ng-class="{'active': pageState.pathname == '/Account/Settings'}"><a href="/Account/Settings/">@HttpContext.Current.User.Identity.Name &nbsp;<span class="glyphicon glyphicon-wrench"></span></a></li>
+						<li class="collapse visible-xs"><a href="#"><i class="glyphicon glyphicon-wrench"></i></a></li>
+						<li>
+							<a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a>
+							@using (Html.BeginForm(MVC.Account.ActionNames.LogOff, MVC.Account.Name, FormMethod.Post, new { id = "logoutForm" }))
+							{
+								@Html.AntiForgeryToken()
+							}
+						</li>
+					</ul>
+				}
+				else
+				{
+					<ul class="nav navbar-nav">
+						<li class="collapse hidden-xs" ng-class="{'active': pageState.pathname == '/Account/Login'}">@Html.ActionLink("Login", MVC.Account.ActionNames.Login, MVC.Account.Name)</li>
+						<li class="collapse visible-xs"><a href="#"><i class="glyphicon glyphicon-wrench"></i></a></li>
+						<li>
+							<a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a>
+							@using (Html.BeginForm(MVC.Account.ActionNames.LogOff, MVC.Account.Name, FormMethod.Post, new { id = "logoutForm" }))
+							{
+								@Html.AntiForgeryToken()
+							}
+						</li>
+					</ul>
+				}
+			</div>
+
+		</div>
+	</div>
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - RailsSharp</p>
+		</footer>
+	</div>
+
+	@Scripts.Render("~/bundles/dependency")
+	@if (Request.IsAuthenticated)
+	{
+		@Scripts.Render("~/bundles/app")
+		<script src="~/signalr/hubs"></script>
+	}
+	@RenderSection("scripts", required: false)
+</body>
+
+
+
+</html>
