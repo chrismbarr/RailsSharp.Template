@@ -32,9 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LAN.Core.Eventing, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LAN.Core.Eventing, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\LAN.Core.Eventing.1.3.1.0\lib\net45\LAN.Core.Eventing.dll</HintPath>
+      <HintPath>..\packages\LAN.Core.Eventing.1.3.3.0\lib\net45\LAN.Core.Eventing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

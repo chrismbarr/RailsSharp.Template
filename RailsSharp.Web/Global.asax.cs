@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Security.Authentication;
 using System.Web;
 using System.Web.Mvc;
@@ -6,8 +7,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Script.Serialization;
 using System.Web.Security;
-using LAN.Core.DependancyInjection;
-using LAN.Core.DependancyInjection.SimpleInjector;
+using LAN.Core.DependencyInjection;
+using LAN.Core.DependencyInjection.SimpleInjector;
 using LAN.Core.Eventing;
 using LAN.Core.Eventing.SignalR;
 using RailsSharp.Backend;
@@ -17,11 +18,14 @@ namespace RailsSharp.Web
 {
     public class MvcApplication : HttpApplication
     {
-        protected void Application_Start()
+	    /// <exception cref="ApplicationException">Will be thrown if the application is missing any of its dependencies after DI wireup. </exception>
+	    protected void Application_Start()
         {
-			//note: DI: lightwieght container abstraction over simple injector.  The abstraction was more to limit my usage than anything else.
+			//note: DI: lightweight container abstraction over simple injector.  The abstraction was more to limit my usage than anything else.
 			var container = new SimpleInjectorContainer(new Container());
-			ContainerRegistery.DefaultContainer = container;
+			ContainerRegistry.DefaultContainer = container;
+
+			SignalREventHub.ExceptionOccured += SignalREventHubOnExceptionOccured;
 
 			ControllerBuilder.Current.SetControllerFactory(new DIControllerFactory(container));
 
@@ -35,9 +39,17 @@ namespace RailsSharp.Web
 	        var handlerRepository = new DIHandlerRepository(container);
 			EventHandlerConfig.RegisterAllHandlers(handlerRepository);
 			container.RegisterSingleton<IHandlerRepository>(handlerRepository);
+
+			var result = container.AreAllRequiredDependenciesRegistered();
+			if (result.IsMissingDependencies) throw new ApplicationException(result.Message);
         }
 
-		protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+	    private void SignalREventHubOnExceptionOccured(object sender, SignalRExceptionEventArgs e)
+	    {
+		    Debugger.Break();
+	    }
+
+	    protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
 		{
 			var authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
 			if (authCookie == null) return;

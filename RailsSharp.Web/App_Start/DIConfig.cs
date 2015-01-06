@@ -1,4 +1,4 @@
-﻿using LAN.Core.DependancyInjection;
+﻿using LAN.Core.DependencyInjection;
 using LAN.Core.Eventing;
 using LAN.Core.Eventing.SignalR;
 using RailsSharp.Backend.Users;

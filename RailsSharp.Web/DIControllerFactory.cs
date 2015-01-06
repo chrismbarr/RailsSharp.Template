@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
-using LAN.Core.DependancyInjection;
+using LAN.Core.DependencyInjection;
 
 namespace RailsSharp.Web
 {

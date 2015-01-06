@@ -48,19 +48,18 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LAN.Core.DependancyInjection">
-      <HintPath>..\packages\LAN.Core.DependancyInjection.1.0.6.0\lib\net45\LAN.Core.DependancyInjection.dll</HintPath>
+    <Reference Include="LAN.Core.DependencyInjection">
+      <HintPath>..\packages\LAN.Core.DependencyInjection.1.1.0.0\lib\net45\LAN.Core.DependencyInjection.dll</HintPath>
     </Reference>
-    <Reference Include="LAN.Core.DependancyInjection.SimpleInjector">
-      <HintPath>..\packages\LAN.Core.DependancyInjection.SimpleInjector.1.0.7.0\lib\net45\LAN.Core.DependancyInjection.SimpleInjector.dll</HintPath>
+    <Reference Include="LAN.Core.DependencyInjection.SimpleInjector">
+      <HintPath>..\packages\LAN.Core.DependencyInjection.SimpleInjector.1.2.1.0\lib\net45\LAN.Core.DependencyInjection.SimpleInjector.dll</HintPath>
     </Reference>
-    <Reference Include="LAN.Core.Eventing, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LAN.Core.Eventing, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\LAN.Core.Eventing.1.3.1.0\lib\net45\LAN.Core.Eventing.dll</HintPath>
+      <HintPath>..\packages\LAN.Core.Eventing.1.3.3.0\lib\net45\LAN.Core.Eventing.dll</HintPath>
     </Reference>
-    <Reference Include="LAN.Core.Eventing.SignalR, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\LAN.Core.Eventing.SignalR.1.5.1.0\lib\net45\LAN.Core.Eventing.SignalR.dll</HintPath>
+    <Reference Include="LAN.Core.Eventing.SignalR">
+      <HintPath>..\packages\LAN.Core.Eventing.SignalR.1.5.8.0\lib\net45\LAN.Core.Eventing.SignalR.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.1.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
