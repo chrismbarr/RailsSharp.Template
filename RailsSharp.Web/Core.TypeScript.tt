@@ -24,7 +24,7 @@
             }
             if (IsBoolean(typeName))
             {
-                  return "bool";
+                  return "boolean";
             }
             if (IsArray(typeName))
             {

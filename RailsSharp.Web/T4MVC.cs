@@ -175,6 +175,8 @@ namespace Links
             public static readonly string angular_locale_bez_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bez.min.js") ? Url("angular-locale_bez.min.js") : Url("angular-locale_bez.js");
             public static readonly string angular_locale_bg_bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bg-bg.min.js") ? Url("angular-locale_bg-bg.min.js") : Url("angular-locale_bg-bg.js");
             public static readonly string angular_locale_bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bg.min.js") ? Url("angular-locale_bg.min.js") : Url("angular-locale_bg.js");
+            public static readonly string angular_locale_bm_latn_ml_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bm-latn-ml.min.js") ? Url("angular-locale_bm-latn-ml.min.js") : Url("angular-locale_bm-latn-ml.js");
+            public static readonly string angular_locale_bm_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bm-latn.min.js") ? Url("angular-locale_bm-latn.min.js") : Url("angular-locale_bm-latn.js");
             public static readonly string angular_locale_bm_ml_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bm-ml.min.js") ? Url("angular-locale_bm-ml.min.js") : Url("angular-locale_bm-ml.js");
             public static readonly string angular_locale_bm_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bm.min.js") ? Url("angular-locale_bm.min.js") : Url("angular-locale_bm.js");
             public static readonly string angular_locale_bn_bd_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_bn-bd.min.js") ? Url("angular-locale_bn-bd.min.js") : Url("angular-locale_bn-bd.js");
@@ -230,6 +232,8 @@ namespace Links
             public static readonly string angular_locale_de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_de.min.js") ? Url("angular-locale_de.min.js") : Url("angular-locale_de.js");
             public static readonly string angular_locale_dje_ne_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dje-ne.min.js") ? Url("angular-locale_dje-ne.min.js") : Url("angular-locale_dje-ne.js");
             public static readonly string angular_locale_dje_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dje.min.js") ? Url("angular-locale_dje.min.js") : Url("angular-locale_dje.js");
+            public static readonly string angular_locale_dsb_de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dsb-de.min.js") ? Url("angular-locale_dsb-de.min.js") : Url("angular-locale_dsb-de.js");
+            public static readonly string angular_locale_dsb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dsb.min.js") ? Url("angular-locale_dsb.min.js") : Url("angular-locale_dsb.js");
             public static readonly string angular_locale_dua_cm_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dua-cm.min.js") ? Url("angular-locale_dua-cm.min.js") : Url("angular-locale_dua-cm.js");
             public static readonly string angular_locale_dua_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dua.min.js") ? Url("angular-locale_dua.min.js") : Url("angular-locale_dua.js");
             public static readonly string angular_locale_dyo_sn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_dyo-sn.min.js") ? Url("angular-locale_dyo-sn.min.js") : Url("angular-locale_dyo-sn.js");
@@ -298,6 +302,7 @@ namespace Links
             public static readonly string angular_locale_en_mt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-mt.min.js") ? Url("angular-locale_en-mt.min.js") : Url("angular-locale_en-mt.js");
             public static readonly string angular_locale_en_mu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-mu.min.js") ? Url("angular-locale_en-mu.min.js") : Url("angular-locale_en-mu.js");
             public static readonly string angular_locale_en_mw_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-mw.min.js") ? Url("angular-locale_en-mw.min.js") : Url("angular-locale_en-mw.js");
+            public static readonly string angular_locale_en_my_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-my.min.js") ? Url("angular-locale_en-my.min.js") : Url("angular-locale_en-my.js");
             public static readonly string angular_locale_en_na_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-na.min.js") ? Url("angular-locale_en-na.min.js") : Url("angular-locale_en-na.js");
             public static readonly string angular_locale_en_nf_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-nf.min.js") ? Url("angular-locale_en-nf.min.js") : Url("angular-locale_en-nf.js");
             public static readonly string angular_locale_en_ng_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_en-ng.min.js") ? Url("angular-locale_en-ng.min.js") : Url("angular-locale_en-ng.js");
@@ -445,6 +450,7 @@ namespace Links
             public static readonly string angular_locale_gl_es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gl-es.min.js") ? Url("angular-locale_gl-es.min.js") : Url("angular-locale_gl-es.js");
             public static readonly string angular_locale_gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gl.min.js") ? Url("angular-locale_gl.min.js") : Url("angular-locale_gl.js");
             public static readonly string angular_locale_gsw_ch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gsw-ch.min.js") ? Url("angular-locale_gsw-ch.min.js") : Url("angular-locale_gsw-ch.js");
+            public static readonly string angular_locale_gsw_fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gsw-fr.min.js") ? Url("angular-locale_gsw-fr.min.js") : Url("angular-locale_gsw-fr.js");
             public static readonly string angular_locale_gsw_li_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gsw-li.min.js") ? Url("angular-locale_gsw-li.min.js") : Url("angular-locale_gsw-li.js");
             public static readonly string angular_locale_gsw_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gsw.min.js") ? Url("angular-locale_gsw.min.js") : Url("angular-locale_gsw.js");
             public static readonly string angular_locale_gu_in_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_gu-in.min.js") ? Url("angular-locale_gu-in.min.js") : Url("angular-locale_gu-in.js");
@@ -467,6 +473,8 @@ namespace Links
             public static readonly string angular_locale_hr_ba_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hr-ba.min.js") ? Url("angular-locale_hr-ba.min.js") : Url("angular-locale_hr-ba.js");
             public static readonly string angular_locale_hr_hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hr-hr.min.js") ? Url("angular-locale_hr-hr.min.js") : Url("angular-locale_hr-hr.js");
             public static readonly string angular_locale_hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hr.min.js") ? Url("angular-locale_hr.min.js") : Url("angular-locale_hr.js");
+            public static readonly string angular_locale_hsb_de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hsb-de.min.js") ? Url("angular-locale_hsb-de.min.js") : Url("angular-locale_hsb-de.js");
+            public static readonly string angular_locale_hsb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hsb.min.js") ? Url("angular-locale_hsb.min.js") : Url("angular-locale_hsb.js");
             public static readonly string angular_locale_hu_hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hu-hu.min.js") ? Url("angular-locale_hu-hu.min.js") : Url("angular-locale_hu-hu.js");
             public static readonly string angular_locale_hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hu.min.js") ? Url("angular-locale_hu.min.js") : Url("angular-locale_hu.js");
             public static readonly string angular_locale_hy_am_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_hy-am.min.js") ? Url("angular-locale_hy-am.min.js") : Url("angular-locale_hy-am.js");
@@ -541,6 +549,8 @@ namespace Links
             public static readonly string angular_locale_ky_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_ky.min.js") ? Url("angular-locale_ky.min.js") : Url("angular-locale_ky.js");
             public static readonly string angular_locale_lag_tz_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lag-tz.min.js") ? Url("angular-locale_lag-tz.min.js") : Url("angular-locale_lag-tz.js");
             public static readonly string angular_locale_lag_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lag.min.js") ? Url("angular-locale_lag.min.js") : Url("angular-locale_lag.js");
+            public static readonly string angular_locale_lb_lu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lb-lu.min.js") ? Url("angular-locale_lb-lu.min.js") : Url("angular-locale_lb-lu.js");
+            public static readonly string angular_locale_lb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lb.min.js") ? Url("angular-locale_lb.min.js") : Url("angular-locale_lb.js");
             public static readonly string angular_locale_lg_ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lg-ug.min.js") ? Url("angular-locale_lg-ug.min.js") : Url("angular-locale_lg-ug.js");
             public static readonly string angular_locale_lg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lg.min.js") ? Url("angular-locale_lg.min.js") : Url("angular-locale_lg.js");
             public static readonly string angular_locale_lkt_us_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_lkt-us.min.js") ? Url("angular-locale_lkt-us.min.js") : Url("angular-locale_lkt-us.js");
@@ -656,6 +666,10 @@ namespace Links
             public static readonly string angular_locale_pt_st_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_pt-st.min.js") ? Url("angular-locale_pt-st.min.js") : Url("angular-locale_pt-st.js");
             public static readonly string angular_locale_pt_tl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_pt-tl.min.js") ? Url("angular-locale_pt-tl.min.js") : Url("angular-locale_pt-tl.js");
             public static readonly string angular_locale_pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_pt.min.js") ? Url("angular-locale_pt.min.js") : Url("angular-locale_pt.js");
+            public static readonly string angular_locale_qu_bo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_qu-bo.min.js") ? Url("angular-locale_qu-bo.min.js") : Url("angular-locale_qu-bo.js");
+            public static readonly string angular_locale_qu_ec_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_qu-ec.min.js") ? Url("angular-locale_qu-ec.min.js") : Url("angular-locale_qu-ec.js");
+            public static readonly string angular_locale_qu_pe_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_qu-pe.min.js") ? Url("angular-locale_qu-pe.min.js") : Url("angular-locale_qu-pe.js");
+            public static readonly string angular_locale_qu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_qu.min.js") ? Url("angular-locale_qu.min.js") : Url("angular-locale_qu.js");
             public static readonly string angular_locale_rm_ch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_rm-ch.min.js") ? Url("angular-locale_rm-ch.min.js") : Url("angular-locale_rm-ch.js");
             public static readonly string angular_locale_rm_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_rm.min.js") ? Url("angular-locale_rm.min.js") : Url("angular-locale_rm.js");
             public static readonly string angular_locale_rn_bi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_rn-bi.min.js") ? Url("angular-locale_rn-bi.min.js") : Url("angular-locale_rn-bi.js");
@@ -684,6 +698,7 @@ namespace Links
             public static readonly string angular_locale_sbp_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_sbp.min.js") ? Url("angular-locale_sbp.min.js") : Url("angular-locale_sbp.js");
             public static readonly string angular_locale_se_fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_se-fi.min.js") ? Url("angular-locale_se-fi.min.js") : Url("angular-locale_se-fi.js");
             public static readonly string angular_locale_se_no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_se-no.min.js") ? Url("angular-locale_se-no.min.js") : Url("angular-locale_se-no.js");
+            public static readonly string angular_locale_se_se_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_se-se.min.js") ? Url("angular-locale_se-se.min.js") : Url("angular-locale_se-se.js");
             public static readonly string angular_locale_se_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_se.min.js") ? Url("angular-locale_se.min.js") : Url("angular-locale_se.js");
             public static readonly string angular_locale_seh_mz_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_seh-mz.min.js") ? Url("angular-locale_seh-mz.min.js") : Url("angular-locale_seh-mz.js");
             public static readonly string angular_locale_seh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_seh.min.js") ? Url("angular-locale_seh.min.js") : Url("angular-locale_seh.js");
@@ -702,6 +717,8 @@ namespace Links
             public static readonly string angular_locale_sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_sk.min.js") ? Url("angular-locale_sk.min.js") : Url("angular-locale_sk.js");
             public static readonly string angular_locale_sl_si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_sl-si.min.js") ? Url("angular-locale_sl-si.min.js") : Url("angular-locale_sl-si.js");
             public static readonly string angular_locale_sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_sl.min.js") ? Url("angular-locale_sl.min.js") : Url("angular-locale_sl.js");
+            public static readonly string angular_locale_smn_fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_smn-fi.min.js") ? Url("angular-locale_smn-fi.min.js") : Url("angular-locale_smn-fi.js");
+            public static readonly string angular_locale_smn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_smn.min.js") ? Url("angular-locale_smn.min.js") : Url("angular-locale_smn.js");
             public static readonly string angular_locale_sn_zw_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_sn-zw.min.js") ? Url("angular-locale_sn-zw.min.js") : Url("angular-locale_sn-zw.js");
             public static readonly string angular_locale_sn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_sn.min.js") ? Url("angular-locale_sn.min.js") : Url("angular-locale_sn.js");
             public static readonly string angular_locale_so_dj_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_so-dj.min.js") ? Url("angular-locale_so-dj.min.js") : Url("angular-locale_so-dj.js");
@@ -816,6 +833,8 @@ namespace Links
             public static readonly string angular_locale_xog_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_xog.min.js") ? Url("angular-locale_xog.min.js") : Url("angular-locale_xog.js");
             public static readonly string angular_locale_yav_cm_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yav-cm.min.js") ? Url("angular-locale_yav-cm.min.js") : Url("angular-locale_yav-cm.js");
             public static readonly string angular_locale_yav_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yav.min.js") ? Url("angular-locale_yav.min.js") : Url("angular-locale_yav.js");
+            public static readonly string angular_locale_yi_001_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yi-001.min.js") ? Url("angular-locale_yi-001.min.js") : Url("angular-locale_yi-001.js");
+            public static readonly string angular_locale_yi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yi.min.js") ? Url("angular-locale_yi.min.js") : Url("angular-locale_yi.js");
             public static readonly string angular_locale_yo_bj_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yo-bj.min.js") ? Url("angular-locale_yo-bj.min.js") : Url("angular-locale_yo-bj.js");
             public static readonly string angular_locale_yo_ng_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yo-ng.min.js") ? Url("angular-locale_yo-ng.min.js") : Url("angular-locale_yo-ng.js");
             public static readonly string angular_locale_yo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-locale_yo.min.js") ? Url("angular-locale_yo.min.js") : Url("angular-locale_yo.js");
@@ -841,9 +860,10 @@ namespace Links
         public static readonly string jMess_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jMess.d.min.js") ? Url("jMess.d.min.js") : Url("jMess.d.js");
         public static readonly string jMess_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jMess.min.js") ? Url("jMess.min.js") : Url("jMess.js");
         public static readonly string jquery_1_10_2_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.intellisense.min.js") ? Url("jquery-1.10.2.intellisense.min.js") : Url("jquery-1.10.2.intellisense.js");
-        public static readonly string jquery_1_10_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.min.js") ? Url("jquery-1.10.2.min.js") : Url("jquery-1.10.2.js");
-        public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
-        public static readonly string jquery_1_10_2_min_map = Url("jquery-1.10.2.min.map");
+        public static readonly string jquery_2_1_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-2.1.1.intellisense.min.js") ? Url("jquery-2.1.1.intellisense.min.js") : Url("jquery-2.1.1.intellisense.js");
+        public static readonly string jquery_2_1_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-2.1.1.min.js") ? Url("jquery-2.1.1.min.js") : Url("jquery-2.1.1.js");
+        public static readonly string jquery_2_1_1_min_js = Url("jquery-2.1.1.min.js");
+        public static readonly string jquery_2_1_1_min_map = Url("jquery-2.1.1.min.map");
         public static readonly string jquery_signalR_2_1_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.signalR-2.1.2.min.js") ? Url("jquery.signalR-2.1.2.min.js") : Url("jquery.signalR-2.1.2.js");
         public static readonly string jquery_signalR_2_1_2_min_js = Url("jquery.signalR-2.1.2.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
@@ -854,8 +874,12 @@ namespace Links
         public static readonly string LogR_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LogR.d.min.js") ? Url("LogR.d.min.js") : Url("LogR.d.js");
         public static readonly string LogR_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LogR.min.js") ? Url("LogR.min.js") : Url("LogR.js");
         public static readonly string modernizr_2_6_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.6.2.min.js") ? Url("modernizr-2.6.2.min.js") : Url("modernizr-2.6.2.js");
+        public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
         public static readonly string NeedsToMoveSomeday_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NeedsToMoveSomeday.min.js") ? Url("NeedsToMoveSomeday.min.js") : Url("NeedsToMoveSomeday.js");
+        public static readonly string npm_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/npm.min.js") ? Url("npm.min.js") : Url("npm.js");
         public static readonly string respond_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/respond.min.js") ? Url("respond.min.js") : Url("respond.js");
+        public static readonly string respond_matchmedia_addListener_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/respond.matchmedia.addListener.min.js") ? Url("respond.matchmedia.addListener.min.js") : Url("respond.matchmedia.addListener.js");
+        public static readonly string respond_matchmedia_addListener_min_js = Url("respond.matchmedia.addListener.min.js");
         public static readonly string respond_min_js = Url("respond.min.js");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class typings {
@@ -914,8 +938,13 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string bootstrap_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap-theme.min.css") ? Url("bootstrap-theme.min.css") : Url("bootstrap-theme.css");
+             
+        public static readonly string bootstrap_theme_css_map = Url("bootstrap-theme.css.map");
+        public static readonly string bootstrap_theme_min_css = Url("bootstrap-theme.min.css");
         public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
              
+        public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
         public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
              
