@@ -1111,7 +1111,6 @@
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
     <Content Include="Scripts\LogR.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
