@@ -2,6 +2,17 @@
 	OnError: "ServerOnError"
 };
 
+var SignalRConnectionEvents = {
+	InitialConnection: "InitialConnection",
+	ConnectionLost: "ConnectionLost",
+	AttemptingReconnect: "AttemptingReconnect",
+	ConnectionReestablished: "ConnectionReestablished"
+};
+
+interface ISignalRConnectionResponse {
+	connection: HubConnection
+}
+
 (() => {
 	var app = angular.module('app', ['ngCookies']);
 
@@ -16,5 +27,40 @@
 	
 	var barker = new jMess.EventBarker(eventRegistry, logger);
 	barker.startBarking();
-	var dataAccess = new DAL.DataAccess(eventRegistry, new SignalRExternalInvoker());
+	var signalRExtInvoker = new SignalRExternalInvoker();
+	var dataAccess = new DAL.DataAccess(eventRegistry, signalRExtInvoker);
+
+	function signalRStateName(state: number) {
+		//POSSIBLE STATES: { connecting: 0, connected: 1, reconnecting: 2, disconnected: 4 }
+		if (state === 4) {
+			//there are 4 states, but there is no state #3, only 0,1,2, and 4
+			//So if state #4 was passed in, we want the name of the 3rd one.
+			state = 3;
+		}
+		return Object.keys($.signalR.connectionState)[state];
+	}
+
+	var previouslyConnected = false;
+	signalRExtInvoker.onStateChange = (change: IHubConnectionStateChange, connection: HubConnection) => {
+		logger.custom("SignalR state changed from " + signalRStateName(change.oldState) + " (" + change.oldState + ")" + " to " + signalRStateName(change.newState) + " (" + change.newState + ")", change);
+
+		var eventResponse: ISignalRConnectionResponse = {
+			connection: connection
+		}
+
+		if (change.newState === $.signalR.connectionState.disconnected) {
+			//Disconnected
+			eventRegistry.raise(SignalRConnectionEvents.ConnectionLost, eventResponse);
+		} else if (change.newState === $.signalR.connectionState.reconnecting) {
+			//Attempting to reconnect
+			eventRegistry.raise(SignalRConnectionEvents.AttemptingReconnect, eventResponse);
+		} else if (previouslyConnected && change.newState === $.signalR.connectionState.connected) {
+			//Connected when previously disconnected or reconnecting
+			eventRegistry.raise(SignalRConnectionEvents.ConnectionReestablished, eventResponse);
+		} else if (!previouslyConnected && change.newState === $.signalR.connectionState.connected) {
+			//First Connection
+			previouslyConnected = true;
+			eventRegistry.raise(SignalRConnectionEvents.InitialConnection, eventResponse);
+		}
+	};
 })();
