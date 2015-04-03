@@ -1,4 +1,4 @@
-﻿var __extends = this.__extends || function (d, b) {
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -10,11 +10,9 @@ var Str = (function () {
     Str.endsWith = function (input, suffix) {
         return input.indexOf(suffix, input.length - suffix.length) !== -1;
     };
-
     Str.trim = function (str) {
         return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     };
-
     Str.format = function (formatString) {
         var args = arguments;
         return formatString.replace(/{(\d+)}/g, function (match, number) {
@@ -24,7 +22,6 @@ var Str = (function () {
     };
     return Str;
 })();
-
 var DAL;
 (function (DAL) {
     var BaseExternalInvoker = (function () {
@@ -47,27 +44,20 @@ var DAL;
         return BaseExternalInvoker;
     })();
     DAL.BaseExternalInvoker = BaseExternalInvoker;
-
     var DataAccess = (function () {
-        function DataAccess(eventRegistry /* should be the singleton instance of the EventRegistry that your application uses */ , externalInvoker /* should inherit BaseExternalInvoker */ ) {
+        function DataAccess(eventRegistry /* should be the singleton instance of the EventRegistry that your application uses */, externalInvoker /* should inherit BaseExternalInvoker */) {
             var allEvents = eventRegistry.getAvailableEvents();
-            var allRequests = _.filter(allEvents, function (eventName) {
-                return Str.endsWith(eventName, 'Request');
-            });
-
+            var allRequests = _.filter(allEvents, function (eventName) { return Str.endsWith(eventName, 'Request'); });
             if (allRequests.length > 0) {
                 eventRegistry.hook(jMess.LifeCycleEvents.AfterRaise, function (data) {
                     var event = data[0];
-                    if (_.any(allRequests, function (readEvent) {
-                        return event == readEvent;
-                    })) {
+                    if (_.any(allRequests, function (readEvent) { return event == readEvent; })) {
                         data = data[1];
                         externalInvoker.invoke(event, data);
                     }
                 });
             }
             ;
-
             externalInvoker.responder = function (event, data) {
                 eventRegistry.raise(event, data);
             };
@@ -76,7 +66,6 @@ var DAL;
     })();
     DAL.DataAccess = DataAccess;
 })(DAL || (DAL = {}));
-
 var DateTime = (function () {
     function DateTime() {
     }
@@ -86,10 +75,10 @@ var DateTime = (function () {
         var hoursTwelveFormat;
         if (hoursTwentyForFormat == 0) {
             hoursTwelveFormat = 12;
-        } else {
+        }
+        else {
             hoursTwelveFormat = hoursTwentyForFormat > 12 ? hoursTwentyForFormat - 12 : hoursTwentyForFormat;
         }
-
         function addZero(num) {
             return (num >= 0 && num < 10) ? "0" + num : num + "";
         }
@@ -97,12 +86,10 @@ var DateTime = (function () {
         var timeBits = addZero(hoursTwelveFormat) + ':' + addZero(now.getMinutes());
         var todBits = now.getHours() >= 12 ? "PM" : "AM";
         var strDateTime = dateBits + ' ' + timeBits + ' ' + todBits;
-
         return strDateTime;
     };
     return DateTime;
 })();
-
 var SignalRExternalInvoker = (function (_super) {
     __extends(SignalRExternalInvoker, _super);
     function SignalRExternalInvoker() {
@@ -111,33 +98,33 @@ var SignalRExternalInvoker = (function (_super) {
         var intervalLoop;
         var connection = $.hubConnection();
         var queue = [];
-
         var hub = connection.createHubProxy('eventHub');
         hub.on('eventReceived', function () {
             var msgs = [];
-            for (var _i = 0; _i < (arguments.length - 0); _i++) {
-                msgs[_i] = arguments[_i + 0];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                msgs[_i - 0] = arguments[_i];
             }
             var event = msgs[0], data = msgs[1];
             writeTransportLog(' ↓ Reply ↓ ', 'Event: ' + event);
             _this.responder(event, data);
         });
-
         var writeConnectionLog = function (connectionState) {
             var prefix = !logConfig.SupportCustomLogs ? '' : '%c';
             var suffix = !logConfig.SupportCustomLogs ? '' : 'background: #222; color: #bada55';
             logR.custom(prefix + ' © ' + connectionState + ' © ', suffix);
         };
-
         var writeTransportLog = function (transportType, details) {
             var prefix = !logConfig.SupportCustomLogs ? '' : '%c';
             var suffix = !logConfig.SupportCustomLogs ? '' : 'background: #222; color: #bada55';
             logR.custom(prefix + transportType, suffix, details);
         };
-
         connection.stateChanged(function (change) {
-            var newState = change.newState;
-            switch (newState) {
+            //Call the optional function if it really is a function when the state is changed
+            if ($.isFunction(_this.onStateChange)) {
+                //Send the change state and the SignalR connection object
+                _this.onStateChange.call(_this, change, connection);
+            }
+            switch (change.newState) {
                 case $.signalR.connectionState.reconnecting:
                     writeConnectionLog('Re-connecting');
                     stopQueue();
@@ -154,36 +141,33 @@ var SignalRExternalInvoker = (function (_super) {
             }
         });
         connection.start();
-
         var stopQueue = function () {
             writeTransportLog(' ! Queue Stopped ! ', DateTime.NowString());
             clearInterval(intervalLoop);
         };
-
         var startQueue = function () {
             var sendRequest = function (qi) {
                 if ($.signalR.connectionState.connected) {
                     writeTransportLog(' ↑ Request ↑ ', 'Event: ' + qi.Event);
                     hub.invoke('raiseEvent', qi.Event, qi.Data);
-                } else {
+                }
+                else {
                     stopQueue();
                 }
             };
-
             var process = function () {
                 for (var i = 0; i < queue.length; i++) {
                     var qi = queue.splice(0, 1)[0];
                     if (qi) {
                         sendRequest(qi);
-                    } else {
+                    }
+                    else {
                         break;
                     }
                 }
             };
-
             intervalLoop = setInterval(process, 10);
         };
-
         this.invoke = function (event, data) {
             queue.push({
                 Event: event,
@@ -191,24 +175,22 @@ var SignalRExternalInvoker = (function (_super) {
             });
         };
     }
+    SignalRExternalInvoker.prototype.onStateChange = function (change, connection) {
+    };
     return SignalRExternalInvoker;
 })(DAL.BaseExternalInvoker);
-
 var QueueItem = (function () {
     function QueueItem() {
     }
     return QueueItem;
 })();
-
 var HexUid = (function () {
     function HexUid() {
         var uid = [];
         var hexChars = '0123456789abcdef'.split('');
-
         for (var i = 0; i < 24; i++) {
             uid[i] = Math.floor(Math.random() * 0x10);
         }
-
         for (var j = 0; j < 24; j++) {
             uid[j] = hexChars[uid[j]];
         }

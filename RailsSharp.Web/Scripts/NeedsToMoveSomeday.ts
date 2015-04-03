@@ -80,7 +80,14 @@ class DateTime {
 	}
 }
 
+interface IHubConnectionStateChange {
+	oldState: number;
+	newState: number;
+}
+
 class SignalRExternalInvoker extends DAL.BaseExternalInvoker {
+	public onStateChange(change: IHubConnectionStateChange, connection: HubConnection) { }
+
 	constructor() {
 		super();
 		var intervalLoop;
@@ -106,9 +113,14 @@ class SignalRExternalInvoker extends DAL.BaseExternalInvoker {
 			logR.custom(prefix + transportType, suffix, details);
 		};
 
-		connection.stateChanged(change=> {
-			var newState = change.newState;
-			switch (newState) {
+		connection.stateChanged((change: IHubConnectionStateChange)=> {
+			//Call the optional function if it really is a function when the state is changed
+			if ($.isFunction(this.onStateChange)) {
+				//Send the change state and the SignalR connection object
+				this.onStateChange.call(this, change, connection);
+			}
+
+			switch (change.newState) {
 				case $.signalR.connectionState.reconnecting:
 					writeConnectionLog('Re-connecting');
 					stopQueue();
